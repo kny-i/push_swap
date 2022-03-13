@@ -1,5 +1,5 @@
 #include "../include/push_swap.h"
-# include <libc.h>
+
 t_list	*ft_lstnew(int value)
 {
 	t_list	*new;

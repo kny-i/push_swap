@@ -38,6 +38,7 @@ void	cordinate_comp(t_list **stack)
 	}
 	ft_printlst_index(stack);
 }
+
 /*
 
 int	 main()
