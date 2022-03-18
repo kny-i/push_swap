@@ -21,4 +21,7 @@ void    ft_lstadd_back(t_list **stack, t_list *new);
 size_t  ft_lstsize(t_list **stack);
 void    ft_printlst_data(t_list **head);
 void    ft_printlst_index(t_list **head);
+int 	is_sorted(t_list **stack);
+void	cordinate_comp(t_list **stack);
+void    simple_sort(t_list **stack_a, t_list **stack_b);
 #endif

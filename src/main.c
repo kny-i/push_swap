@@ -2,7 +2,7 @@
 
 static void	sort_stack(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_lstsize(*stack_a) <= 5)
+	if (ft_lstsize(stack_a) <= 5)
 		simple_sort(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
@@ -45,16 +45,14 @@ int	main(int argc,	char **argv)
 	*stack_b = NULL;
 
 	init_stack_a(stack_a, argc, argv);
-	if (is_sorted(stack_a))
+	if (is_sorted(stack_a) || ft_lstsize(stack) == 1)
 	{
 		free_stack(stack_a);
 		free_stack(stack_b);
-		return ;
+		return (0);
 	}
 	sort_stack(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
-	return ;
+	return (0);
 }
-
-*/
