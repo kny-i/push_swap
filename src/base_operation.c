@@ -52,8 +52,9 @@ int push(t_list **stack_to, t_list **stack_from)
 	t_list	*head_to;
 	t_list	*head_from;
 
-	if (ft_lstsize(stack_from) == 0)
-		return(-1);
+	if (ft_lstsize(stack_from) == 0) {
+		return (-1);
+	}
 	head_to = *stack_to;
 	head_from = *stack_from;
 	tmp = *stack_from;

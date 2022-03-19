@@ -1,13 +1,13 @@
 #include "../include/push_swap.h"
 
-t_list	*ft_lstnew(int value)
+t_list	*ft_lstnew(int data)
 {
 	t_list	*new;
 
 	new = (t_list *)calloc(1,sizeof(t_list));
 	if (!new)
 		return (NULL);
-	new->data = value;
+	new->data = data;
     new->index = NEVEWER_EDITED;
     return(new);
 }
@@ -84,6 +84,17 @@ void    ft_printlst_index(t_list **head)
 	while(tmp)
 	{
 		ft_printf("%d\n",tmp->index);
+		tmp = tmp->next;
+	}
+}
+void    ft_printlst_index_data(t_list **head)
+{
+	t_list	*tmp;
+
+	tmp = *head;
+	while(tmp)
+	{
+		ft_printf("data = %d, index = %d\n",tmp->data, tmp->index);
 		tmp = tmp->next;
 	}
 }

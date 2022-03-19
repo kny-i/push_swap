@@ -20,7 +20,7 @@ void	get_min(t_list **stack, size_t index)
 	}
 	if (min)
 		min->index = index;
-		ft_printf("data = %d, index = %d\n",min->data, min->index);
+		//ft_printf("data = %d, index = %d\n",min->data, min->index);
 	return;
 }
 
@@ -36,7 +36,6 @@ void	cordinate_comp(t_list **stack)
 		get_min(stack, index);
 		index++;
 	}
-	ft_printlst_index(stack);
 }
 
 /*
