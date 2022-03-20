@@ -1,6 +1,6 @@
 #include "../include/push_swap.h"
 
-void	get_min(t_list **stack, size_t index)
+void	get_min_comp(t_list **stack, size_t index)
 {
 	t_list	*head;
 	t_list	*min;
@@ -33,7 +33,7 @@ void	cordinate_comp(t_list **stack)
 	lst_size = ft_lstsize(stack);
 	while (index < lst_size)
 	{
-		get_min(stack, index);
+		get_min_comp(stack, index);
 		index++;
 	}
 }
