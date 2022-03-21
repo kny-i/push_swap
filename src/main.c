@@ -31,14 +31,6 @@ static void	init_stack_a(t_list **stack_a, int argc, char **argv)
 	cordinate_comp(stack_a);
 }
 
-./a.out "33 3 4 4 2"
-./a.out 2 3 5 43 4
-        0 1 3 4  2
-rb
-pa
-rr
-
-
 int	main(int argc,	char **argv)
 {
 	t_list	**stack_a;
