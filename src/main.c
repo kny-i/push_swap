@@ -1,6 +1,6 @@
 #include "../include/push_swap.h"
 
-static void	sort_stack(t_list **stack_a, t_list **stack_b)
+static void	sort_stack(t_list *stack_a, t_list *stack_b)
 {
 	if (ft_lstsize(stack_a) <= 5)
 		simple_sort(stack_a, stack_b);
@@ -8,7 +8,7 @@ static void	sort_stack(t_list **stack_a, t_list **stack_b)
 		radix_sort(stack_a, stack_b);
 }
 
-static void	init_stack_a(t_list **stack_a, int argc, char **argv)
+static void	init_stack_a(t_list *stack_a, int argc, char **argv)
 {
 	t_list	*new;
 	char	**args;
@@ -33,19 +33,16 @@ static void	init_stack_a(t_list **stack_a, int argc, char **argv)
 
 int	main(int argc,	char **argv)
 {
-	t_list	**stack_a;
-	t_list	**stack_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
 	if (argc < 2)
 		return (-1);
-	stack_a = malloc(sizeof(t_list));
-	stack_b = malloc(sizeof(t_list));
-
-	*stack_a = NULL;
-	*stack_b = NULL;
+	stack_a = ft_calloc(1, sizeof(t_list));
+	stack_b = ft_calloc(1,sizeof(t_list));
 
 	init_stack_a(stack_a, argc, argv);
-	if (is_sorted(stack_a) || ft_lstsize(stack) == 1)
+	if (is_sorted(&stack_a) || ft_lstsize(stack) == 1)
 	{
 		free_stack(stack_a);
 		free_stack(stack_b);

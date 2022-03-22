@@ -1,11 +1,19 @@
 #include "../include/push_swap.h"
+void	ft_free(t_list **str)
 
-int free_stack(t_list **stack)
+void    free_stack(t_list **stack)
 {
-	t_list *head;
+	t_list    *head;
+	t_list    *tmp;
 
-	int i;
-	while(stack[i])
-		free(stack[i]);
-		i++;
+	head = *stack;
+	while (head)
+	{
+		tmp = head;
+		printf("tmp_add = %p\n", tmp);
+		head = head->next;
+		printf("head_add = %p\n", head);
+		free(tmp);
+	}
+	free(stack);
 }
