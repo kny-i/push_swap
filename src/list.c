@@ -9,6 +9,7 @@ t_list	*ft_lstnew(int data)
 		return (NULL);
 	new->data = data;
     new->index = NEVEWER_EDITED;
+	new->next = NULL;
     return(new);
 }
 
@@ -20,15 +21,15 @@ void    ft_lstadd_front(t_list **stack, t_list *new)
     *stack = new;
 }
 
-t_list  *ft_lstlast(t_list **head)
+t_list  *ft_lstlast(t_list *head)
 {
-    while ((*head)->next)
+    while ((head)->next)
     {
-        *head = (*head)->next;
-        if ((*head)->next == NULL)
-            return (*head);
+        head = (head)->next;
+        if ((head)->next == NULL)
+            return (head);
     }
-    return (*head);
+    return (head);
 }
 
 
@@ -38,8 +39,8 @@ void    ft_lstadd_back(t_list **stack, t_list *new)
 
     if (*stack)
     {
-        last = ft_lstlast(stack);
-        last->next = new;
+        last = ft_lstlast(*stack);
+		last->next = new;
         new->next = NULL;
     }
     else
@@ -69,13 +70,42 @@ void    ft_printlst_index_data(t_list **stack)
 	t_list	*tmp;
 
 	tmp = *stack;
-	ft_printf("data = %d, index = %d\n",(*stack)->data, (*stack)->index);
 	while(tmp)
 	{
 		ft_printf("data = %d, index = %d\n",tmp->data, tmp->index);
 		tmp = tmp->next;
 	}
 }
+
+int main()
+{
+	t_list **head;
+
+	head = calloc(100, sizeof(t_list));
+	*head = ft_lstnew(0);
+//	(*head)->next = ft_lstnew(1);
+//	(*head)->next->next = ft_lstnew(2);
+	ft_printlst_index_data(head);
+	ft_lstadd_back(head, ft_lstnew(1));
+
+	printf("\n");
+	ft_printlst_index_data(head);
+	printf("\n");
+	ft_lstadd_back(head, ft_lstnew(2));
+	printf("\n");
+	ft_printlst_index_data(head);
+	printf("\n");
+//	ft_printlst_index_data(head);
+	ft_lstadd_back(head, ft_lstnew(3));
+//	ft_lstadd_back(head, ft_lstnew(3));
+//	ft_lstadd_back(head, ft_lstnew(4));
+	printf("lstsize = %zu", ft_lstsize(head));
+	ft_printlst_index_data(head);
+	//system("leaks a.out");
+}
+
+/*
+
 
 int main()
 {
@@ -87,9 +117,9 @@ int main()
 	ft_lstadd_back(&head, ft_lstnew(3));
 	ft_lstadd_back(&head, ft_lstnew(4));
 	ft_lstadd_back(&head, ft_lstnew(5));
-	ft_lstsize(&head);
+	printf("lstsize = %zu", ft_lstsize(&head));
 	ft_printlst_index_data(&head);
 	system("leaks a.out");
 }
 
-
+*/
