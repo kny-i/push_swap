@@ -1,6 +1,6 @@
 #include "../include/push_swap.h"
 
-int swap(t_list *stack)
+int swap(t_list **stack)
 {
 	t_list	*head;
 	t_list	*next;
@@ -63,12 +63,12 @@ int push(t_list *stack_to, t_list *stack_from)
 	{
 		head_to = tmp;
 		head_to->next = NULL;
-		*stack_to = head_to;
+		stack_to = head_to;
 	}
 	else
 	{
 		tmp->next = head_to;
-		*stack_to = tmp;
+		stack_to = tmp;
 	}
 	return(0);
 }
@@ -173,20 +173,21 @@ int	rrr(t_list *stack_a, t_list *stack_b)
 	ft_putendl_fd("rrr", 1);
 	return(0);
 }
+/*
 
 int	main()
 {
 	t_list *stack_a;
 	t_list *stack_b;
 
-	*stack_a = malloc(sizeof(t_list *));
+	stack_b = malloc(sizeof(t_list));
 	stack_a = ft_lstnew(0);
 	ft_lstadd_back(stack_a,ft_lstnew(1));
 	ft_lstadd_back(stack_a,ft_lstnew(2));
 	ft_printlst_data(stack_a);
-	stack_b = stack_a;
-	rra(stack_a);
+	ra(stack_a);
 	ft_printf("stack_a ->\n");
 	ft_printlst_data(stack_a);
-	ft_printlst_data(stack_b);
+//	ft_printlst_data(stack_b);
 }
+*/
