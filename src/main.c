@@ -38,18 +38,20 @@ int	main(int argc,	char **argv)
 
 	if (argc < 2)
 		return (-1);
-	stack_a = ft_calloc(1, sizeof(t_list));
-	stack_b = ft_calloc(1,sizeof(t_list));
+	stack_a = (t_list *)ft_calloc(1, sizeof(t_list));
+	stack_b = (t_list *)ft_calloc(1,sizeof(t_list));
 
+	stack_a = NULL;
+	stack_b = NULL;
 	init_stack_a(&stack_a, argc, argv);
-	if (is_sorted(&stack_a) || ft_lstsize(&stack) == 1)
+	if (is_sorted(&stack_a) || ft_lstsize(&stack_a) == 1)
 	{
 		free_stack(&stack_a);
 		free_stack(&stack_b);
 		return (0);
 	}
 	sort_stack(&stack_a, &stack_b);
-	free_stack(stack_a);
-	free_stack(stack_b);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

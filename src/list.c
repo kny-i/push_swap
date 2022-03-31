@@ -8,7 +8,7 @@ t_list	*ft_lstnew(int data)
 	if (!new)
 		return (NULL);
 	new->data = data;
-    new->index = NEVEWER_EDITED;
+    new->index = NEVER_EDITED;
 	new->next = NULL;
     return(new);
 }
@@ -80,6 +80,8 @@ void    ft_printlst_index_data(t_list **stack)
 	}
 }
 
+/*
+
 int main()
 {
 	t_list **head;
@@ -106,6 +108,7 @@ int main()
 	ft_printlst_index_data(head);
 	//system("leaks a.out");
 }
+*/
 
 /*
 
