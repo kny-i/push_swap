@@ -1,3 +1,5 @@
+/*
+
 #include "../include/push_swap.h"
 
 int swap(t_list **stack)
@@ -175,7 +177,6 @@ int	rrr(t_list **stack_a, t_list **stack_b)
 	return(0);
 }
 
-/*
 
 int	main()
 {
@@ -195,5 +196,4 @@ int	main()
 	ft_printlst_index_data(&stack_a);
 	ft_printf("stack_b ->\n");
 	ft_printlst_index_data(&stack_b);
-}
-*/
+}*/

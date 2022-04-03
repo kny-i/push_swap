@@ -44,5 +44,5 @@ void	sort_size5(t_list **stack_a, t_list **stack_b);
 void    simple_sort(t_list **stack_a, t_list **stack_b);
 int		radix_sort(t_list **stack_a, t_list **stack_b);
 int		count_max_bits(t_list **stack);
-void    free_stack(t_list **stack);
+void    free_s		tack(t_list **stack);
 #endif
