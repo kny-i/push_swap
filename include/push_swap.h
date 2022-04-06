@@ -14,12 +14,12 @@ typedef struct s_list
 # define NEVER_EDITED -1
 # define NOT_MIN_YET 0
 
-t_list	*ft_lstnew(int value);
-void    ft_lstadd_front(t_list **stack, t_list *new);
-t_list  *ft_lstlast(t_list **head);
-void    ft_lstadd_back(t_list **stack, t_list *new);
-size_t  ft_lstsize(t_list **stack);
-void    ft_printlst_data(t_list **head);
+t_list	*ft_lstnew(int data);
+void	ft_lstadd_front(t_list **list, t_list *new);
+t_list	*ft_lstlast(t_list **list);
+void	ft_lstadd_back(t_list **list, t_list *new);
+size_t	ft_lstsize(t_list **list);
+void	ft_printlst_data(t_list **head);
 void    ft_printlst_index(t_list **head);
 void    ft_printlst_index_data(t_list **head);
 int 	is_sorted(t_list **stack);
@@ -44,5 +44,5 @@ void	sort_size5(t_list **stack_a, t_list **stack_b);
 void    simple_sort(t_list **stack_a, t_list **stack_b);
 int		radix_sort(t_list **stack_a, t_list **stack_b);
 int		count_max_bits(t_list **stack);
-void    free_s		tack(t_list **stack);
+void    free_stack(t_list **stack);
 #endif
