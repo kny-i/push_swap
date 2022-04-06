@@ -9,9 +9,9 @@ void	get_min_comp(t_list **stack, size_t index)
 	min = NULL;
 	check_min = NOT_MIN_YET;
 	head = *stack;
-	while(head)
+	while (head)
 	{
-		if((head->index == NEVER_EDITED) && (!check_min || head->data < min->data))
+		if ((head->index == NEVER_EDITED) && (!check_min || head->data < min->data))
 		{
 			min = head;
 			check_min = 1;
@@ -20,8 +20,7 @@ void	get_min_comp(t_list **stack, size_t index)
 	}
 	if (min)
 		min->index = index;
-		//ft_printf("data = %d, index = %d\n",min->data, min->index);
-	return;
+	return ;
 }
 
 void	cordinate_comp(t_list **stack)

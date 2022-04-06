@@ -1,18 +1,18 @@
 #include "../include/push_swap.h"
 
-int is_sorted(t_list **stack)
+int	is_sorted(t_list **stack)
 {
 	t_list	*head;
 
 	head = *stack;
-	while(head && head->next)
+	while (head && head->next)
 	{
 		if (head->data <= head->next->data)
 			head = head->next;
 		else
 			return (0);
 	}
-	return(1);
+	return (1);
 }
 /*
 

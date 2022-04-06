@@ -39,8 +39,7 @@ int	main(int argc,	char **argv)
 	if (argc < 2)
 		return (-1);
 	stack_a = (t_list *)ft_calloc(1, sizeof(t_list));
-	stack_b = (t_list *)ft_calloc(1,sizeof(t_list));
-
+	stack_b = (t_list *)ft_calloc(1, sizeof(t_list));
 	stack_a = NULL;
 	stack_b = NULL;
 	init_stack_a(&stack_a, argc, argv);

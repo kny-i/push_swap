@@ -1,16 +1,13 @@
 #include "../include/push_swap.h"
 
-size_t	ft_lstsize(t_list **list)
+void	ft_printlst_index_data(t_list **list)
 {
-	size_t	i;
 	t_list	*tmp;
 
-	i = 0;
 	tmp = *list;
 	while (tmp)
 	{
+		ft_printf("data = %d, index = %d\n", tmp->data, tmp->index);
 		tmp = tmp->next;
-		i++;
 	}
-	return (i);
 }
