@@ -4,19 +4,14 @@ void	get_min_comp(t_list **stack, size_t index)
 {
 	t_list	*head;
 	t_list	*min;
-	int		check_min;
 
 	min = NULL;
-	check_min = NOT_MIN_YET;
 	head = *stack;
 	while (head)
 	{
 		if ((head->index == NEVER_EDITED) && \
-		(!check_min || head->data < min->data))
-		{
+		(!min || head->data < min->data))
 			min = head;
-			check_min = 1;
-		}
 		head = head->next;
 	}
 	if (min)

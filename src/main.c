@@ -22,6 +22,7 @@ static void	init_stack_a(t_list **stack_a, int argc, char **argv)
 		i = 1;
 		args = argv;
 	}
+	check_args(args);
 	while (args[i])
 	{
 		new = ft_lstnew(ft_atoi(args[i]));

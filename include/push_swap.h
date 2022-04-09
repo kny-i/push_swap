@@ -12,7 +12,6 @@ typedef struct s_list
 }				t_list;
 
 # define NEVER_EDITED -1
-# define NOT_MIN_YET 0
 
 t_list	*ft_lstnew(int data);
 void	ft_lstadd_front(t_list **list, t_list *new);
@@ -46,4 +45,7 @@ void	simple_sort(t_list **stack_a, t_list **stack_b);
 int		radix_sort(t_list **stack_a, t_list **stack_b);
 int		count_max_bits(t_list **stack);
 void	free_stack(t_list **stack);
+void	check_args(char **args);
+void	put_error(char *str);
+int		check_dup(char **args, int num, int i);
 #endif
