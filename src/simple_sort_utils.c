@@ -19,16 +19,16 @@ int	get_min_sort(t_list **stack, int min_valid)
 int	get_distance_to_min(t_list **stack, int min)
 {
 	t_list	*head;
-	int		corect_num;
+	int		distance;
 
-	corect_num = 0;
+	distance = 0;
 	head = *stack;
 	while (head)
 	{
 		if (head->index == min)
 			break ;
-		corect_num++;
+		distance++;
 		head = head->next;
 	}
-	return (corect_num);
+	return (distance);
 }
