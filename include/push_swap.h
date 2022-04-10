@@ -12,6 +12,7 @@ typedef struct s_list
 }				t_list;
 
 # define NEVER_EDITED -1
+# define INTMAX_RANGE 11
 
 t_list	*ft_lstnew(int data);
 void	ft_lstadd_front(t_list **list, t_list *new);
@@ -48,4 +49,5 @@ void	free_stack(t_list **stack);
 void	check_args(char **args);
 void	put_error(char *str);
 int		check_dup(char **args, int num, int i);
+int		check_in_range(char *num);
 #endif

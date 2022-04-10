@@ -34,20 +34,37 @@ int	check_dup(char **args, int num, int i)
 	return (0);
 }
 
-void	check_args(char **args)
+int	check_in_range(char *num)
 {
 	int			i;
-	long long	num;
+	long long	lnum;
+
+	i = 0;
+	while (num[i])
+	{
+		if (i > INTMAX_RANGE)
+			return (0);
+		i++;
+	}
+	lnum = ft_atoll(num);
+	if (lnum < INT_MIN || lnum > INT_MAX)
+		return (0);
+	return (1);
+}
+
+void	check_args(char **args)
+{
+	int		i;
+	int		num;
 
 	i = 1;
 	while (args [i])
 	{
 		if (!ft_isnum(args[i]))
 			put_error("Error");
-		num = atoi(args[i]);
-		printf("%lld\n", num);
-		if (num < INT_MIN || num > INT_MAX)
+		if (!check_in_range(args[i]))
 			put_error("Error");
+		num = ft_atoi(args[i]);
 		if (check_dup(args, num, i))
 			put_error("Error");
 		i++;
