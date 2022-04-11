@@ -37,8 +37,11 @@ int	main(int argc,	char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	if (argc < 2)
+	if (argc < 3)
+	{
+		check_args(argv);
 		return (-1);
+	}
 	stack_a = (t_list *)ft_calloc(1, sizeof(t_list));
 	stack_b = (t_list *)ft_calloc(1, sizeof(t_list));
 	stack_a = NULL;

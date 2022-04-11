@@ -50,4 +50,5 @@ void	check_args(char **args);
 void	put_error(char *str);
 int		check_dup(char **args, int num, int i);
 int		check_in_range(char *num);
+int		ft_isnum(char *num);
 #endif
