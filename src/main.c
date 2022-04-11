@@ -23,6 +23,8 @@ static void	init_stack_a(t_list **stack_a, int argc, char **argv)
 		args = argv;
 	}
 	check_args(args, i);
+	*stack_a = ft_lstnew(ft_atoi(args[i]));
+	i++;
 	while (args[i])
 	{
 		new = ft_lstnew(ft_atoi(args[i]));
@@ -43,8 +45,8 @@ int	main(int argc,	char **argv)
 	{
 		return (-1);
 	}
-	stack_a = (t_list *)malloc(sizeof(t_list));
-	stack_b = (t_list *)malloc(sizeof(t_list));
+	stack_a = (t_list *) ft_calloc(1, sizeof(t_list));
+	stack_b = (t_list *)ft_calloc(1, sizeof(t_list));
 	init_stack_a(&stack_a, argc, argv);
 	if (is_sorted(&stack_a) || ft_lstsize(&stack_a) == 1)
 	{
