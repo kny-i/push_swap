@@ -52,12 +52,12 @@ int	check_in_range(char *num)
 	return (1);
 }
 
-void	check_args(char **args)
+void	check_args(char **args, int start)
 {
 	int		i;
 	int		num;
 
-	i = 1;
+	i = start;
 	while (args [i])
 	{
 		if (!ft_isnum(args[i]))

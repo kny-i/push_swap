@@ -13,3 +13,14 @@ void	free_stack(t_list **stack)
 		free(tmp);
 	}
 }
+
+void	free_str(char **str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		free(str[i++]);
+	free(str);
+	return ;
+}
