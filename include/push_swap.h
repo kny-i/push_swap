@@ -45,11 +45,12 @@ void	sort_size5(t_list **stack_a, t_list **stack_b);
 void	simple_sort(t_list **stack_a, t_list **stack_b);
 int		radix_sort(t_list **stack_a, t_list **stack_b);
 int		count_max_bits(t_list **stack);
-void	free_stack(t_list **stack);
+void	free_stack(t_list *stack);
 void	check_args(char **args, int start);
 void	put_error(char *str);
 int		check_dup(char **args, int num, int i);
 int		check_in_range(char *num);
 int		ft_isnum(char *num);
 void	free_str(char **str);
+void	ft_debuglst(t_list **stack_a, t_list **stack_b);
 #endif

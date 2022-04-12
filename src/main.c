@@ -45,17 +45,18 @@ int	main(int argc,	char **argv)
 	{
 		return (-1);
 	}
-	stack_a = (t_list *) ft_calloc(1, sizeof(t_list));
-	stack_b = (t_list *)ft_calloc(1, sizeof(t_list));
+	stack_a = (t_list *)malloc(sizeof(t_list));
+	stack_b = (t_list *)malloc(sizeof(t_list));
 	init_stack_a(&stack_a, argc, argv);
+	stack_b = NULL;
 	if (is_sorted(&stack_a) || ft_lstsize(&stack_a) == 1)
 	{
-		free_stack(&stack_a);
-		free_stack(&stack_b);
+		free_stack(stack_a);
+		free_stack(stack_b);
 		return (0);
 	}
 	sort_stack(&stack_a, &stack_b);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }

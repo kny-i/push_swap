@@ -7,7 +7,8 @@ SRCS = src/main.c src/rotate.c src/simple_sort5.c \
 		src/free.c src/radix.c src/simple_sort3.c src/swap.c src/is_sorted.c \
 		src/reverse_rotate.c src/simple_sort4.c list/ft_lstadd_back.c \
 		list/ft_lstlast.c list/ft_lstsize.c list/ft_lstadd_front.c \
-		list/ft_lstnew.c list/ft_printlst_index_data.c src/error_handle.c
+		list/ft_lstnew.c list/ft_printlst_index_data.c src/error_handle.c \
+		list/ft_debuglst.c
 
 OBJS = $(SRCS:%.c=%.o)
 LIBFTMAKE = $(MAKE) -C ./libft

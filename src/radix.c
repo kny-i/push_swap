@@ -57,7 +57,6 @@ int	radix_sort(t_list **stack_a, t_list **stack_b)
 	radix_sort_2(stack_a, stack_b, size_a, max_bits);
 	return (0);
 }
-
 /*
 
 int	main()
@@ -67,8 +66,7 @@ int	main()
 
 	stack_a = malloc(sizeof(t_list *));
 	stack_b = malloc(sizeof(t_list *));
-	*stack_a = ft_lstnew(0);
-	ft_lstadd_back(stack_a,ft_lstnew(3));
+	*stack_a = ft_lstnew(3);
 	ft_lstadd_back(stack_a,ft_lstnew(2));
 	ft_lstadd_back(stack_a,ft_lstnew(7));
 	ft_lstadd_back(stack_a,ft_lstnew(5));
