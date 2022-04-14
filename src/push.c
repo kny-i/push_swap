@@ -7,7 +7,7 @@ int	push(t_list **stack_to, t_list **stack_from)
 	t_list	*head_from;
 
 	if (ft_lstsize(stack_from) == 0)
-		return (-1);
+		return (1);
 	head_to = *stack_to;
 	head_from = *stack_from;
 	tmp = *stack_from;
@@ -29,16 +29,16 @@ int	push(t_list **stack_to, t_list **stack_from)
 
 int	pa(t_list **stack_a, t_list **stack_b)
 {
-	if (push(stack_a, stack_b) == -1)
-		return (-1);
+	if (push(stack_a, stack_b) == 1)
+		return (1);
 	ft_putendl_fd("pa", 1);
 	return (0);
 }
 
 int	pb(t_list **stack_b, t_list **stack_a)
 {
-	if (push(stack_b, stack_a) == -1)
-		return (-1);
+	if (push(stack_b, stack_a) == 1)
+		return (1);
 	ft_putendl_fd("pb", 1);
 	return (0);
 }

@@ -2,23 +2,32 @@
 
 void	put_error(char *str)
 {
-	ft_putendl_fd(str, 1);
+	ft_putendl_fd(str, 2);
 	exit(0);
 }
 
 int	ft_isnum(char *num)
 {
 	int	i;
+	int	count_num;
 
 	i = 0;
+	count_num = 0;
 	while (num[i] == '-' || num[i] == '+')
+	{
 		i++;
+		if (i == 2)
+			return (0);
+	}
 	while (num[i])
 	{
 		if (!ft_isdigit(num[i]))
 			return (0);
+		count_num++;
 		i++;
 	}
+	if (!count_num)
+		return (0);
 	return (1);
 }
 

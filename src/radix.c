@@ -20,7 +20,8 @@ int	count_max_bits(t_list **stack)
 	return (max_bits);
 }
 
-int	radix_sort_2(t_list **stack_a, t_list **stack_b, int size_a, int max_bits)
+void	radix_sort_2(t_list **stack_a, t_list **stack_b, \
+					 int size_a, int max_bits)
 {
 	t_list	*head_a;
 	int		i;
@@ -38,16 +39,18 @@ int	radix_sort_2(t_list **stack_a, t_list **stack_b, int size_a, int max_bits)
 				ra(stack_a);
 			}
 			else
+			{
 				pb(stack_b, stack_a);
+			}
 		}
 		while (ft_lstsize(stack_b) != 0)
 			pa(stack_a, stack_b);
 		i++;
 	}
-	return (0);
+	return ;
 }
 
-int	radix_sort(t_list **stack_a, t_list **stack_b)
+void	radix_sort(t_list **stack_a, t_list **stack_b)
 {
 	int		size_a;
 	int		max_bits;
@@ -55,7 +58,7 @@ int	radix_sort(t_list **stack_a, t_list **stack_b)
 	size_a = ft_lstsize(stack_a);
 	max_bits = count_max_bits(stack_a);
 	radix_sort_2(stack_a, stack_b, size_a, max_bits);
-	return (0);
+	return ;
 }
 /*
 
