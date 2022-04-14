@@ -52,6 +52,5 @@ int	main(int argc,	char **argv)
 	}
 	sort_stack(&stack_a, &stack_b);
 	free_stack(stack_a);
-	//system("leaks push_swap");
 	return (0);
 }
